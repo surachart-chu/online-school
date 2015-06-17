@@ -28,6 +28,7 @@ class Path_Model extends APP_Model {
 	{
 		$data = $this->input->post();
 		if ( $this->db->insert('path', $data) ) {
+			$data['id'] = $this->db->insert_id();
 			return $data;
 		} else {
 			return $this->db->error();
